@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane prefWidth="1300"
+            prefHeight="800"
+
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+
+            style="-fx-background-color:#111827;">
+
+    <top>
+
+        <HBox style="-fx-padding:20;">
+
+            <Label text="Payment Management"
+
+                   style="-fx-text-fill:white;
+                          -fx-font-size:30;
+                          -fx-font-weight:bold;"/>
+
+        </HBox>
+
+    </top>
+
+    <center>
+
+        <VBox spacing="25"
+              style="-fx-padding:20;">
+
+            <HBox spacing="20">
+
+                <VBox spacing="15">
+
+                    <TextField promptText="Payment ID"
+                               prefWidth="250"/>
+
+                    <TextField promptText="Patient ID"
+                               prefWidth="250"/>
+
+                    <TextField promptText="Amount"
+                               prefWidth="250"/>
+
+                </VBox>
+
+                <VBox spacing="15">
+
+                    <DatePicker prefWidth="250"/>
+
+                    <ComboBox promptText="Payment Method"
+                              prefWidth="250"/>
+
+                </VBox>
+
+            </HBox>
+
+            <HBox spacing="15">
+
+                <Button text="PAY"
+                        prefWidth="120"
+                        styleClass="action-btn"/>
+
+                <Button text="PRINT BILL"
+                        prefWidth="150"
+                        styleClass="action-btn"/>
+
+            </HBox>
+
+            <TableView prefHeight="500">
+
+                <columns>
+
+                    <TableColumn text="Payment ID"
+                                 prefWidth="150"/>
+
+                    <TableColumn text="Patient"
+                                 prefWidth="220"/>
+
+                    <TableColumn text="Amount"
+                                 prefWidth="180"/>
+
+                    <TableColumn text="Date"
+                                 prefWidth="180"/>
+
+                    <TableColumn text="Method"
+                                 prefWidth="180"/>
+
+                </columns>
+
+            </TableView>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>

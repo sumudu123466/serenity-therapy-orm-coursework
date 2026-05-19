@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1200.0" style="-fx-background-color: linear-gradient(to right,#111827,#1F2937);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+
+    <children>
+
+        <HBox prefHeight="720" prefWidth="1200">
+
+            <!-- LEFT SIDE -->
+
+            <AnchorPane prefWidth="650" style="-fx-background-color: transparent;">
+
+                <children>
+
+                    <VBox alignment="CENTER_LEFT" layoutX="80" layoutY="180" spacing="20">
+
+                        <Label style="-fx-text-fill:white;                                       -fx-font-size:42;                                       -fx-font-weight:bold;" text="Serenity Therapy Center" />
+
+                        <Label style="-fx-text-fill:#9CA3AF;                                       -fx-font-size:18;" text="Mental Health Management System" />
+
+
+                    </VBox>
+
+                </children>
+
+            </AnchorPane>
+
+            <!-- RIGHT SIDE -->
+
+            <AnchorPane prefWidth="550">
+
+                <children>
+
+                    <VBox alignment="CENTER" layoutX="47.0" layoutY="110" prefHeight="500" prefWidth="428.0" spacing="25" style="-fx-background-color: rgba(255,255,255,0.08);                                  -fx-background-radius:25;                                  -fx-border-radius:25;                                  -fx-border-color: rgba(255,255,255,0.1);">
+
+                        <Label style="-fx-text-fill:white;                                       -fx-font-size:32;                                       -fx-font-weight:bold;" text="LOGIN" />
+
+                        <TextField fx:id="txtUsername" prefHeight="45" prefWidth="376.0" promptText="Username" style="-fx-background-color:#374151;                                           -fx-text-fill:white;                                           -fx-prompt-text-fill:#9CA3AF;                                           -fx-background-radius:15;                                           -fx-font-size:14;" />
+
+                        <PasswordField fx:id="txtPassword" prefHeight="45" prefWidth="300" promptText="Password" style="-fx-background-color:#374151;                                               -fx-text-fill:white;                                               -fx-prompt-text-fill:#9CA3AF;                                               -fx-background-radius:15;                                               -fx-font-size:14;" />
+
+                        <CheckBox style="-fx-text-fill:white;" text="Show Password" />
+
+                        <Button onAction="#login" prefHeight="45" prefWidth="300" style="-fx-background-color:                                         linear-gradient(to right,#4F46E5,#7C3AED);                                         -fx-text-fill:white;                                        -fx-font-size:16;                                        -fx-font-weight:bold;                                        -fx-background-radius:15;                                        -fx-cursor:hand;" text="LOGIN" />
+
+                    </VBox>
+
+                </children>
+
+            </AnchorPane>
+
+        </HBox>
+
+    </children>
+
+</AnchorPane>
