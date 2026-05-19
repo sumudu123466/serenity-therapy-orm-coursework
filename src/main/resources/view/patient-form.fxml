@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <?import javafx.scene.control.*?>
+    <?import javafx.scene.layout.*?>
+
+    <BorderPane prefWidth="1300"
+                prefHeight="800"
+                xmlns="http://javafx.com/javafx/21"
+                xmlns:fx="http://javafx.com/fxml/1"
+                fx:controller="controller.PatientFromController"
+                style="-fx-background-color:#111827;"> <top>
+        <HBox alignment="CENTER_LEFT"
+              spacing="20"
+              style="-fx-padding:20;">
+
+            <Label text="Patient Management"
+                   style="-fx-text-fill:white;
+                          -fx-font-size:30;
+                          -fx-font-weight:bold;"/>
+        </HBox>
+    </top>
+
+        <center>
+            <VBox spacing="25"
+                  style="-fx-padding:20;">
+
+                <HBox spacing="20">
+                    <VBox spacing="15">
+                        <TextField fx:id="txtPatientId"
+                                   promptText="Patient ID"
+                                   prefWidth="250"/>
+
+                        <TextField fx:id="txtName"
+                                   promptText="Patient Name"
+                                   prefWidth="250"/>
+
+                        <TextField fx:id="txtEmail"
+                                   promptText="Email"
+                                   prefWidth="250"/>
+
+                        <TextField fx:id="txtPhone"
+                                   promptText="Phone"
+                                   prefWidth="250"/>
+                    </VBox>
+
+                    <VBox spacing="15">
+                        <ComboBox fx:id="cmbProgram"
+                                  promptText="Select Program"
+                                  prefWidth="250"/>
+
+                        <DatePicker fx:id="dateRegister"
+                                    prefWidth="250"/>
+
+                        <TextField fx:id="txtPayment"
+                                   promptText="Payment Amount"
+                                   prefWidth="250"/>
+                    </VBox>
+                </HBox>
+
+                <HBox spacing="15">
+                    <Button text="SAVE" onAction="#savePatient" styleClass="action-btn"/>
+                    <Button text="UPDATE" onAction="#updatePatient" styleClass="action-btn"/>
+                    <Button text="DELETE" onAction="#deletePatient" styleClass="action-btn"/>
+                    <Button text="CLEAR" onAction="#clearForm" styleClass="action-btn"/>
+                    <Button text="SEARCH" onAction="#searchPatient" styleClass="action-btn"/>
+                </HBox>
+
+                <HBox spacing="10">
+                    <TextField promptText="Search Patient"
+                               prefWidth="300"/>
+
+                    <Button text="SEARCH"
+                            styleClass="action-btn"/>
+                </HBox>
+
+                <TableView prefHeight="450">
+                    <columns>
+                        <TableColumn text="Patient ID"
+                                     prefWidth="120"/>
+
+                        <TableColumn text="Name"
+                                     prefWidth="180"/>
+
+                        <TableColumn text="Email"
+                                     prefWidth="220"/>
+
+                        <TableColumn text="Phone"
+                                     prefWidth="150"/>
+
+                        <TableColumn text="Program"
+                                     prefWidth="200"/>
+
+                        <TableColumn text="Payment"
+                                     prefWidth="150"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </center>
+
+    </BorderPane>

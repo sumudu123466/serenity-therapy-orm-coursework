@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane prefWidth="1300"
+            prefHeight="800"
+
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+
+            style="-fx-background-color:#111827;">
+
+    <top>
+
+        <HBox style="-fx-padding:20;">
+
+            <Label text="Therapy Session Scheduling"
+
+                   style="-fx-text-fill:white;
+                          -fx-font-size:30;
+                          -fx-font-weight:bold;"/>
+
+        </HBox>
+
+    </top>
+
+    <center>
+
+        <VBox spacing="25"
+              style="-fx-padding:20;">
+
+            <HBox spacing="20">
+
+                <VBox spacing="15">
+
+                    <TextField promptText="Session ID"
+                               prefWidth="250"/>
+
+                    <ComboBox promptText="Select Patient"
+                              prefWidth="250"/>
+
+                    <ComboBox promptText="Select Therapist"
+                              prefWidth="250"/>
+
+                </VBox>
+
+                <VBox spacing="15">
+
+                    <DatePicker prefWidth="250"/>
+
+                    <TextField promptText="Time"
+                               prefWidth="250"/>
+
+                    <ComboBox promptText="Program"
+                              prefWidth="250"/>
+
+                </VBox>
+
+            </HBox>
+
+            <HBox spacing="15">
+
+                <Button text="BOOK"
+                        prefWidth="120"
+                        styleClass="action-btn"/>
+
+                <Button text="UPDATE"
+                        prefWidth="120"
+                        styleClass="action-btn"/>
+
+                <Button text="CANCEL"
+                        prefWidth="120"
+                        styleClass="action-btn"/>
+
+            </HBox>
+
+            <TableView prefHeight="500">
+
+                <columns>
+
+                    <TableColumn text="Session ID"
+                                 prefWidth="140"/>
+
+                    <TableColumn text="Patient"
+                                 prefWidth="200"/>
+
+                    <TableColumn text="Therapist"
+                                 prefWidth="200"/>
+
+                    <TableColumn text="Date"
+                                 prefWidth="160"/>
+
+                    <TableColumn text="Time"
+                                 prefWidth="140"/>
+
+                    <TableColumn text="Program"
+                                 prefWidth="220"/>
+
+                </columns>
+
+            </TableView>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>

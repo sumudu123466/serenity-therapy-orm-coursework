@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane prefWidth="1300"
+            prefHeight="800"
+
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+
+            style="-fx-background-color:#111827;">
+
+    <top>
+
+        <HBox style="-fx-padding:20;">
+
+            <Label text="Reports &amp; Analytics"
+
+                   style="-fx-text-fill:white;
+                          -fx-font-size:30;
+                          -fx-font-weight:bold;"/>
+
+        </HBox>
+
+    </top>
+
+    <center>
+
+        <VBox spacing="25"
+              style="-fx-padding:20;">
+
+            <HBox spacing="20">
+
+                <VBox prefWidth="250"
+                      prefHeight="120"
+
+                      style="-fx-background-color:#4F46E5;
+                             -fx-background-radius:20;
+                             -fx-padding:20;">
+
+                    <Label text="Monthly Revenue"
+                           style="-fx-text-fill:white;
+                                  -fx-font-size:18;"/>
+
+                    <Label text="Rs. 450,000"
+                           style="-fx-text-fill:white;
+                                  -fx-font-size:28;
+                                  -fx-font-weight:bold;"/>
+
+                </VBox>
+
+                <VBox prefWidth="250"
+                      prefHeight="120"
+
+                      style="-fx-background-color:#2563EB;
+                             -fx-background-radius:20;
+                             -fx-padding:20;">
+
+                    <Label text="Active Sessions"
+                           style="-fx-text-fill:white;
+                                  -fx-font-size:18;"/>
+
+                    <Label text="85"
+                           style="-fx-text-fill:white;
+                                  -fx-font-size:28;
+                                  -fx-font-weight:bold;"/>
+
+                </VBox>
+
+            </HBox>
+
+            <LineChart title="Revenue Analytics"
+                       prefHeight="450">
+
+                <xAxis>
+                    <CategoryAxis label="Month"/>
+                </xAxis>
+
+                <yAxis>
+                    <NumberAxis label="Revenue"/>
+                </yAxis>
+
+            </LineChart>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>

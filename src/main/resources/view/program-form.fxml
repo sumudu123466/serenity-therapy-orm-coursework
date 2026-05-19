@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane prefWidth="1200"
+            prefHeight="750"
+
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+
+            style="-fx-background-color:#111827;">
+
+    <top>
+
+        <HBox style="-fx-padding:20;">
+
+            <Label text="Program Management"
+
+                   style="-fx-text-fill:white;
+                          -fx-font-size:30;
+                          -fx-font-weight:bold;"/>
+
+        </HBox>
+
+    </top>
+
+    <center>
+
+        <VBox spacing="20"
+              style="-fx-padding:20;">
+
+            <HBox spacing="20">
+
+                <VBox spacing="15">
+
+                    <TextField promptText="Program ID"
+                               prefWidth="250"/>
+
+                    <TextField promptText="Program Name"
+                               prefWidth="250"/>
+
+                    <TextField promptText="Duration"
+                               prefWidth="250"/>
+
+                </VBox>
+
+                <VBox spacing="15">
+
+                    <TextField promptText="Fee"
+                               prefWidth="250"/>
+
+                    <TextArea promptText="Description"
+                              prefWidth="250"
+                              prefHeight="120"/>
+
+                </VBox>
+
+            </HBox>
+
+            <HBox spacing="15">
+
+                <Button text="SAVE"
+                        prefWidth="120"
+                        styleClass="action-btn"/>
+
+                <Button text="UPDATE"
+                        prefWidth="120"
+                        styleClass="action-btn"/>
+
+                <Button text="DELETE"
+                        prefWidth="120"
+                        styleClass="action-btn"/>
+
+            </HBox>
+
+            <TableView prefHeight="450">
+
+                <columns>
+
+                    <TableColumn text="Program ID"
+                                 prefWidth="150"/>
+
+                    <TableColumn text="Program Name"
+                                 prefWidth="250"/>
+
+                    <TableColumn text="Duration"
+                                 prefWidth="180"/>
+
+                    <TableColumn text="Fee"
+                                 prefWidth="180"/>
+
+                </columns>
+
+            </TableView>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>
