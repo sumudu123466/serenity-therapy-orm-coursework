@@ -4,12 +4,11 @@
 <?import javafx.scene.control.*?>
 
 <BorderPane prefWidth="1300"
-            prefHeight="800"
-
-            xmlns="http://javafx.com/javafx/21"
-            xmlns:fx="http://javafx.com/fxml/1"
-
-            style="-fx-background-color:#111827;">
+             prefHeight="800"
+             xmlns="http://javafx.com/javafx/21"
+             xmlns:fx="http://javafx.com/fxml/1"
+             fx:controller="controller.PaymentController"
+             style="-fx-background-color:#111827;">
 
     <top>
 
@@ -34,22 +33,28 @@
 
                 <VBox spacing="15">
 
-                    <TextField promptText="Payment ID"
+                    <Label text="Payment Details"
+                           style="-fx-text-fill:#E5E7EB; -fx-font-size:14; -fx-font-weight:bold;"/>
+
+                    <TextField fx:id="txtPaymentId" promptText="Payment ID"
                                prefWidth="250"/>
 
-                    <TextField promptText="Patient ID"
+                    <TextField fx:id="txtPatientId" promptText="Patient ID"
                                prefWidth="250"/>
 
-                    <TextField promptText="Amount"
+                    <TextField fx:id="txtAmount" promptText="Amount"
                                prefWidth="250"/>
 
                 </VBox>
 
                 <VBox spacing="15">
 
-                    <DatePicker prefWidth="250"/>
+                    <Label text="Transaction"
+                           style="-fx-text-fill:#E5E7EB; -fx-font-size:14; -fx-font-weight:bold;"/>
 
-                    <ComboBox promptText="Payment Method"
+                    <DatePicker fx:id="dpPaymentDate" promptText="Payment Date" prefWidth="250"/>
+
+                    <ComboBox fx:id="cmbPaymentMethod" promptText="Payment Method"
                               prefWidth="250"/>
 
                 </VBox>
@@ -60,31 +65,38 @@
 
                 <Button text="PAY"
                         prefWidth="120"
+                        onAction="#savePayment"
                         styleClass="action-btn"/>
 
-                <Button text="PRINT BILL"
-                        prefWidth="150"
+                <Button text="DELETE"
+                        prefWidth="120"
+                        onAction="#deletePayment"
+                        styleClass="action-btn"/>
+
+                <Button text="CLEAR"
+                        prefWidth="120"
+                        onAction="#clearForm"
                         styleClass="action-btn"/>
 
             </HBox>
 
-            <TableView prefHeight="500">
+            <TableView fx:id="tblPayment" prefHeight="500">
 
                 <columns>
 
-                    <TableColumn text="Payment ID"
+                    <TableColumn fx:id="colPaymentId" text="Payment ID"
                                  prefWidth="150"/>
 
-                    <TableColumn text="Patient"
+                    <TableColumn fx:id="colPatientId" text="Patient"
                                  prefWidth="220"/>
 
-                    <TableColumn text="Amount"
+                    <TableColumn fx:id="colAmount" text="Amount"
                                  prefWidth="180"/>
 
-                    <TableColumn text="Date"
+                    <TableColumn fx:id="colDate" text="Date"
                                  prefWidth="180"/>
 
-                    <TableColumn text="Method"
+                    <TableColumn fx:id="colMethod" text="Method"
                                  prefWidth="180"/>
 
                 </columns>

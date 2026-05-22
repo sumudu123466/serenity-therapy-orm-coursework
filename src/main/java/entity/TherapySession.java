@@ -15,11 +15,14 @@ import lombok.*;
 public class TherapySession {
 
     @Id
+    @Column(name = "session_id")
     private String sessionId;
 
-    private String sessionDate;
+    @Column(name = "session_date")
+    private java.sql.Date sessionDate;
 
-    private String sessionTime;
+    @Column(name = "session_time")
+    private java.sql.Time sessionTime;
 
     @ManyToOne
 

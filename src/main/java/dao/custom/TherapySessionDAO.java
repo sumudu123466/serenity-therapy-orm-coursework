@@ -1,28 +1,29 @@
-package dao;
+package dao.custom;
 
-import entity.Payment;
+import entity.TherapySession;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import util.HibernateUtil;
 
 import java.util.List;
 
-public class PaymentDAO {
+public class TherapySessionDAO {
 
-    public void save(Payment p) {
+    public void save(TherapySession ts) {
         Session s = HibernateUtil.getSessionFactory().openSession();
         Transaction tx = s.beginTransaction();
 
-        s.save(p);
+        s.save(ts);
 
         tx.commit();
         s.close();
     }
 
-    public List<Payment> getAll() {
+    public List<TherapySession> getAll() {
         Session s = HibernateUtil.getSessionFactory().openSession();
 
-        List<Payment> list = s.createQuery("FROM Payment", Payment.class).list();
+        List<TherapySession> list =
+                s.createQuery("FROM TherapySession", TherapySession.class).list();
 
         s.close();
         return list;

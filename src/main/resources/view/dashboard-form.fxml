@@ -3,25 +3,25 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane fx:id="rootPane" prefHeight="800" prefWidth="1400" style="-fx-background-color:#111827;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardController">
+<BorderPane fx:id="rootPane" prefHeight="800" prefWidth="1400" style="-fx-background-color:#111827;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardController">
     <!-- SIDEBAR -->
 
     <left>
 
-        <VBox prefWidth="250" spacing="15" style="-fx-background-color:#1F2937;              -fx-padding:30;">
+        <VBox prefWidth="250" spacing="15" style="-fx-background-color:#1F2937; -fx-padding:30;">
 
-            <Label style="-fx-text-fill:white;                   -fx-font-size:24;                   -fx-font-weight:bold;                   -fx-padding:0 0 20 0;" text="THERAPY CENTER" />
+            <Label style="-fx-text-fill:white; -fx-font-size:24; -fx-font-weight:bold; -fx-padding:0 0 20 0;" text="THERAPY CENTER" />
 
 
-            <Button onAction="#openPatients" prefHeight="45" prefWidth="157.0" styleClass="menu-btn" text="👤 Patients" />
+            <Button onAction="#openPatients" prefHeight="45" prefWidth="170.0" styleClass="menu-btn" text="Patients" />
 
-            <Button onAction="#openTherapists" prefHeight="45" prefWidth="159.0" styleClass="menu-btn" text="🧑‍⚕️ Therapists" />
+            <Button onAction="#openTherapists" prefHeight="45" prefWidth="170.0" styleClass="menu-btn" text="Therapists" />
 
-            <Button onAction="#openPrograms" prefHeight="45" prefWidth="161.0" styleClass="menu-btn" text="📚 Programs" />
+            <Button onAction="#openPrograms" prefHeight="45" prefWidth="170.0" styleClass="menu-btn" text="Programs" />
 
-            <Button onAction="#openPayments" prefHeight="45" prefWidth="158.0" styleClass="menu-btn" text="💳 Payments" />
+            <Button onAction="#openPayments" prefHeight="45" prefWidth="170.0" styleClass="menu-btn" text="Payments" />
 
-            <Button onAction="#openSessions" prefHeight="45" prefWidth="158.0" styleClass="menu-btn" text="📅 Sessions" />
+            <Button onAction="#openSessions" prefHeight="45" prefWidth="170.0" styleClass="menu-btn" text="Sessions" />
 
         </VBox>
 
@@ -33,33 +33,33 @@
 
         <VBox spacing="25" style="-fx-padding:30;">
 
-            <Label style="-fx-text-fill:white;                           -fx-font-size:32;                           -fx-font-weight:bold;" text="Dashboard" />
+            <Label style="-fx-text-fill:white; -fx-font-size:32; -fx-font-weight:bold;" text="Dashboard" />
 
             <!-- CARDS -->
 
             <HBox spacing="20">
 
-                <VBox prefHeight="140" prefWidth="250" style="-fx-background-color:#4F46E5;                              -fx-background-radius:20;                              -fx-padding:20;">
+                <VBox prefHeight="140" prefWidth="250" style="-fx-background-color:#4F46E5; -fx-background-radius:20; -fx-padding:20;">
 
-                    <Label style="-fx-text-fill:white;                                   -fx-font-size:18;" text="Total Patients" />
+                    <Label style="-fx-text-fill:white; -fx-font-size:18;" text="Total Patients" />
 
-                    <Label style="-fx-text-fill:white;                                   -fx-font-size:42;                                   -fx-font-weight:bold;" text="120" />
-
-                </VBox>
-
-                <VBox prefHeight="140" prefWidth="250" style="-fx-background-color:#7C3AED;                              -fx-background-radius:20;                              -fx-padding:20;">
-
-                    <Label style="-fx-text-fill:white;                                   -fx-font-size:18;" text="Therapists" />
-
-                    <Label style="-fx-text-fill:white;                                   -fx-font-size:42;                                   -fx-font-weight:bold;" text="25" />
+                    <Label style="-fx-text-fill:white; -fx-font-size:42; -fx-font-weight:bold;" text="120" />
 
                 </VBox>
 
-                <VBox prefHeight="140" prefWidth="250" style="-fx-background-color:#2563EB;                              -fx-background-radius:20;                              -fx-padding:20;">
+                <VBox prefHeight="140" prefWidth="250" style="-fx-background-color:#7C3AED; -fx-background-radius:20; -fx-padding:20;">
 
-                    <Label style="-fx-text-fill:white;                                   -fx-font-size:18;" text="Programs" />
+                    <Label style="-fx-text-fill:white; -fx-font-size:18;" text="Therapists" />
 
-                    <Label style="-fx-text-fill:white;                                   -fx-font-size:42;                                   -fx-font-weight:bold;" text="10" />
+                    <Label style="-fx-text-fill:white; -fx-font-size:42; -fx-font-weight:bold;" text="25" />
+
+                </VBox>
+
+                <VBox prefHeight="140" prefWidth="250" style="-fx-background-color:#2563EB; -fx-background-radius:20; -fx-padding:20;">
+
+                    <Label style="-fx-text-fill:white; -fx-font-size:18;" text="Programs" />
+
+                    <Label style="-fx-text-fill:white; -fx-font-size:42; -fx-font-weight:bold;" text="10" />
 
                 </VBox>
 
@@ -67,7 +67,7 @@
 
             <!-- TABLE -->
 
-            <TableView prefHeight="500" style="-fx-background-color:#1F2937;                               -fx-background-radius:20;">
+            <TableView prefHeight="500" style="-fx-background-color:#1F2937; -fx-background-radius:20;">
 
                 <columns>
 

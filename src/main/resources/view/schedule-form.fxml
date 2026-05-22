@@ -4,12 +4,11 @@
 <?import javafx.scene.control.*?>
 
 <BorderPane prefWidth="1300"
-            prefHeight="800"
-
-            xmlns="http://javafx.com/javafx/21"
-            xmlns:fx="http://javafx.com/fxml/1"
-
-            style="-fx-background-color:#111827;">
+             prefHeight="800"
+             xmlns="http://javafx.com/javafx/21"
+             xmlns:fx="http://javafx.com/fxml/1"
+             fx:controller="controller.ScheduleController"
+             style="-fx-background-color:#111827;">
 
     <top>
 
@@ -34,25 +33,31 @@
 
                 <VBox spacing="15">
 
-                    <TextField promptText="Session ID"
+                    <Label text="Session Setup"
+                           style="-fx-text-fill:#E5E7EB; -fx-font-size:14; -fx-font-weight:bold;"/>
+
+                    <TextField fx:id="txtSessionId" promptText="Session ID"
                                prefWidth="250"/>
 
-                    <ComboBox promptText="Select Patient"
+                    <ComboBox fx:id="cmbPatient" promptText="Select Patient"
                               prefWidth="250"/>
 
-                    <ComboBox promptText="Select Therapist"
+                    <ComboBox fx:id="cmbTherapist" promptText="Select Therapist"
                               prefWidth="250"/>
 
                 </VBox>
 
                 <VBox spacing="15">
 
-                    <DatePicker prefWidth="250"/>
+                    <Label text="Date &amp; Time"
+                           style="-fx-text-fill:#E5E7EB; -fx-font-size:14; -fx-font-weight:bold;"/>
 
-                    <TextField promptText="Time"
+                    <DatePicker fx:id="dpSessionDate" promptText="Session Date" prefWidth="250"/>
+
+                    <TextField fx:id="txtSessionTime" promptText="Time"
                                prefWidth="250"/>
 
-                    <ComboBox promptText="Program"
+                    <ComboBox fx:id="cmbProgram" promptText="Program"
                               prefWidth="250"/>
 
                 </VBox>
@@ -63,38 +68,49 @@
 
                 <Button text="BOOK"
                         prefWidth="120"
+                        onAction="#bookSession"
                         styleClass="action-btn"/>
 
                 <Button text="UPDATE"
                         prefWidth="120"
+                        onAction="#updateSession"
                         styleClass="action-btn"/>
 
                 <Button text="CANCEL"
                         prefWidth="120"
+                        onAction="#deleteSession"
+                        styleClass="action-btn"/>
+
+                <Button text="CLEAR"
+                        prefWidth="120"
+                        onAction="#clearForm"
                         styleClass="action-btn"/>
 
             </HBox>
+                        onAction="#updateSession"
 
-            <TableView prefHeight="500">
+            <TableView fx:id="tblSession" prefHeight="500">
 
                 <columns>
+                        onAction="#deleteSession"
 
-                    <TableColumn text="Session ID"
+                    <TableColumn fx:id="colSessionId" text="Session ID"
                                  prefWidth="140"/>
 
-                    <TableColumn text="Patient"
+                        onAction="#clearForm"
+                    <TableColumn fx:id="colPatient" text="Patient"
                                  prefWidth="200"/>
 
-                    <TableColumn text="Therapist"
+                    <TableColumn fx:id="colTherapist" text="Therapist"
                                  prefWidth="200"/>
 
-                    <TableColumn text="Date"
+                    <TableColumn fx:id="colDate" text="Date"
                                  prefWidth="160"/>
 
-                    <TableColumn text="Time"
+                    <TableColumn fx:id="colTime" text="Time"
                                  prefWidth="140"/>
 
-                    <TableColumn text="Program"
+                    <TableColumn fx:id="colProgram" text="Program"
                                  prefWidth="220"/>
 
                 </columns>

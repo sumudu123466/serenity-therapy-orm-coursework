@@ -5,10 +5,9 @@
 
 <BorderPane prefWidth="1200"
             prefHeight="750"
-
             xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml/1"
-
+            fx:controller="controller.ProgramController"
             style="-fx-background-color:#111827;">
 
     <top>
@@ -34,23 +33,29 @@
 
                 <VBox spacing="15">
 
-                    <TextField promptText="Program ID"
+                    <Label text="Program Basics"
+                           style="-fx-text-fill:#E5E7EB; -fx-font-size:14; -fx-font-weight:bold;"/>
+
+                    <TextField fx:id="txtProgramId" promptText="Program ID"
                                prefWidth="250"/>
 
-                    <TextField promptText="Program Name"
+                    <TextField fx:id="txtProgramName" promptText="Program Name"
                                prefWidth="250"/>
 
-                    <TextField promptText="Duration"
+                    <TextField fx:id="txtDuration" promptText="Duration"
                                prefWidth="250"/>
 
                 </VBox>
 
                 <VBox spacing="15">
 
-                    <TextField promptText="Fee"
+                    <Label text="Pricing &amp; Description"
+                           style="-fx-text-fill:#E5E7EB; -fx-font-size:14; -fx-font-weight:bold;"/>
+
+                    <TextField fx:id="txtFee" promptText="Fee"
                                prefWidth="250"/>
 
-                    <TextArea promptText="Description"
+                    <TextArea fx:id="txtDescription" promptText="Description"
                               prefWidth="250"
                               prefHeight="120"/>
 
@@ -62,32 +67,40 @@
 
                 <Button text="SAVE"
                         prefWidth="120"
+                        onAction="#saveProgram"
                         styleClass="action-btn"/>
 
                 <Button text="UPDATE"
                         prefWidth="120"
+                        onAction="#updateProgram"
                         styleClass="action-btn"/>
 
                 <Button text="DELETE"
                         prefWidth="120"
+                        onAction="#deleteProgram"
+                        styleClass="action-btn"/>
+
+                <Button text="CLEAR"
+                        prefWidth="120"
+                        onAction="#clearForm"
                         styleClass="action-btn"/>
 
             </HBox>
 
-            <TableView prefHeight="450">
+            <TableView fx:id="tblProgram" prefHeight="450">
 
                 <columns>
 
-                    <TableColumn text="Program ID"
+                    <TableColumn fx:id="colProgramId" text="Program ID"
                                  prefWidth="150"/>
 
-                    <TableColumn text="Program Name"
+                    <TableColumn fx:id="colProgramName" text="Program Name"
                                  prefWidth="250"/>
 
-                    <TableColumn text="Duration"
+                    <TableColumn fx:id="colDuration" text="Duration"
                                  prefWidth="180"/>
 
-                    <TableColumn text="Fee"
+                    <TableColumn fx:id="colFee" text="Fee"
                                  prefWidth="180"/>
 
                 </columns>

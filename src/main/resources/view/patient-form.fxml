@@ -1,100 +1,202 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-    <?import javafx.scene.control.*?>
-    <?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-    <BorderPane prefWidth="1300"
-                prefHeight="800"
-                xmlns="http://javafx.com/javafx/21"
-                xmlns:fx="http://javafx.com/fxml/1"
-                fx:controller="controller.PatientFromController"
-                style="-fx-background-color:#111827;"> <top>
+<BorderPane prefWidth="1300"
+            prefHeight="800"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+
+            fx:controller="controller.PatientController"
+
+            style="-fx-background-color:#111827;">
+
+    <!-- TOP TITLE -->
+
+    <top>
+
         <HBox alignment="CENTER_LEFT"
               spacing="20"
+
               style="-fx-padding:20;">
 
             <Label text="Patient Management"
+
                    style="-fx-text-fill:white;
                           -fx-font-size:30;
                           -fx-font-weight:bold;"/>
         </HBox>
+
     </top>
 
-        <center>
-            <VBox spacing="25"
-                  style="-fx-padding:20;">
+    <!-- CENTER -->
 
-                <HBox spacing="20">
-                    <VBox spacing="15">
-                        <TextField fx:id="txtPatientId"
-                                   promptText="Patient ID"
-                                   prefWidth="250"/>
+    <center>
 
-                        <TextField fx:id="txtName"
-                                   promptText="Patient Name"
-                                   prefWidth="250"/>
+        <VBox spacing="25"
 
-                        <TextField fx:id="txtEmail"
-                                   promptText="Email"
-                                   prefWidth="250"/>
+              style="-fx-padding:20;">
 
-                        <TextField fx:id="txtPhone"
-                                   promptText="Phone"
-                                   prefWidth="250"/>
-                    </VBox>
+            <!-- FORM -->
 
-                    <VBox spacing="15">
-                        <ComboBox fx:id="cmbProgram"
-                                  promptText="Select Program"
-                                  prefWidth="250"/>
+            <HBox spacing="20">
 
-                        <DatePicker fx:id="dateRegister"
-                                    prefWidth="250"/>
+                <!-- LEFT SIDE -->
 
-                        <TextField fx:id="txtPayment"
-                                   promptText="Payment Amount"
-                                   prefWidth="250"/>
-                    </VBox>
-                </HBox>
+                <VBox spacing="15">
 
-                <HBox spacing="15">
-                    <Button text="SAVE" onAction="#savePatient" styleClass="action-btn"/>
-                    <Button text="UPDATE" onAction="#updatePatient" styleClass="action-btn"/>
-                    <Button text="DELETE" onAction="#deletePatient" styleClass="action-btn"/>
-                    <Button text="CLEAR" onAction="#clearForm" styleClass="action-btn"/>
-                    <Button text="SEARCH" onAction="#searchPatient" styleClass="action-btn"/>
-                </HBox>
+                    <Label text="Patient Details"
 
-                <HBox spacing="10">
-                    <TextField promptText="Search Patient"
-                               prefWidth="300"/>
+                           style="-fx-text-fill:#E5E7EB;
+                                  -fx-font-size:14;
+                                  -fx-font-weight:bold;"/>
 
-                    <Button text="SEARCH"
-                            styleClass="action-btn"/>
-                </HBox>
+                    <TextField fx:id="txtPatientId"
 
-                <TableView prefHeight="450">
-                    <columns>
-                        <TableColumn text="Patient ID"
-                                     prefWidth="120"/>
+                               promptText="Patient ID"
 
-                        <TableColumn text="Name"
-                                     prefWidth="180"/>
+                               prefWidth="250"/>
 
-                        <TableColumn text="Email"
-                                     prefWidth="220"/>
+                    <TextField fx:id="txtName"
 
-                        <TableColumn text="Phone"
-                                     prefWidth="150"/>
+                               promptText="Patient Name"
 
-                        <TableColumn text="Program"
-                                     prefWidth="200"/>
+                               prefWidth="250"/>
 
-                        <TableColumn text="Payment"
-                                     prefWidth="150"/>
-                    </columns>
-                </TableView>
-            </VBox>
-        </center>
+                    <TextField fx:id="txtEmail"
 
-    </BorderPane>
+                               promptText="Email"
+
+                               prefWidth="250"/>
+
+                    <TextField fx:id="txtPhone"
+
+                               promptText="Phone"
+
+                               prefWidth="250"/>
+
+                </VBox>
+
+                <!-- RIGHT SIDE -->
+
+                <VBox spacing="15">
+
+                    <Label text="Registration Details"
+
+                           style="-fx-text-fill:#E5E7EB;
+                                  -fx-font-size:14;
+                                  -fx-font-weight:bold;"/>
+
+                    <ComboBox fx:id="cmbProgram"
+
+                              promptText="Select Program"
+
+                              prefWidth="250"/>
+
+                    <DatePicker fx:id="dateRegister"
+
+                                promptText="Registration Date"
+
+                                prefWidth="250"/>
+
+                    <TextField fx:id="txtPayment"
+
+                               promptText="Payment Amount"
+
+                               prefWidth="250"/>
+
+                </VBox>
+
+            </HBox>
+
+            <!-- BUTTONS -->
+
+            <HBox spacing="15">
+
+                <Button text="SAVE"
+
+                        onAction="#savePatient"
+
+                        styleClass="action-btn"/>
+
+                <Button text="UPDATE"
+
+                        onAction="#updatePatient"
+
+                        styleClass="action-btn"/>
+
+                <Button text="DELETE"
+
+                        onAction="#deletePatient"
+
+                        styleClass="action-btn"/>
+
+                <Button text="CLEAR FORM"
+
+                        onAction="#clearForm"
+
+                        styleClass="action-btn"/>
+
+                <Button text="SEARCH BY ID"
+
+                        onAction="#searchPatient"
+
+
+                        styleClass="action-btn"/>
+
+            </HBox>
+
+            <!-- TABLE -->
+
+            <TableView fx:id="table"
+
+                       prefHeight="450">
+
+                <columns>
+
+                    <TableColumn fx:id="colId"
+
+                                 text="Patient ID"
+
+                                 prefWidth="120"/>
+
+                    <TableColumn fx:id="colName"
+
+                                 text="Name"
+
+                                 prefWidth="180"/>
+
+                    <TableColumn fx:id="colEmail"
+
+                                 text="Email"
+
+                                 prefWidth="220"/>
+
+                    <TableColumn fx:id="colPhone"
+
+                                 text="Phone"
+
+                                 prefWidth="150"/>
+
+                    <TableColumn fx:id="colProgram"
+
+                                 text="Program"
+
+                                 prefWidth="200"/>
+
+                    <TableColumn fx:id="colPayment"
+
+                                 text="Payment"
+
+                                 prefWidth="150"/>
+
+                </columns>
+
+            </TableView>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>

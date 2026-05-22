@@ -8,6 +8,7 @@
 
             xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.TherapistController"
 
             style="-fx-background-color:#111827;">
 
@@ -34,23 +35,34 @@
 
                 <VBox spacing="15">
 
-                    <TextField promptText="Therapist ID"
+                    <Label text="Therapist Details"
+                           style="-fx-text-fill:#E5E7EB; -fx-font-size:14; -fx-font-weight:bold;"/>
+
+                    <TextField fx:id="txtTherapistId"
+                               promptText="Therapist ID"
                                prefWidth="250"/>
 
-                    <TextField promptText="Therapist Name"
+                    <TextField fx:id="txtName"
+                               promptText="Therapist Name"
                                prefWidth="250"/>
 
-                    <TextField promptText="Specialization"
+                    <TextField fx:id="txtSpecialization"
+                               promptText="Specialization"
                                prefWidth="250"/>
 
                 </VBox>
 
                 <VBox spacing="15">
 
-                    <ComboBox promptText="Assign Program"
+                    <Label text="Assignment"
+                           style="-fx-text-fill:#E5E7EB; -fx-font-size:14; -fx-font-weight:bold;"/>
+
+                    <ComboBox fx:id="cmbProgram"
+                              promptText="Assign Program"
                               prefWidth="250"/>
 
-                    <ComboBox promptText="Availability"
+                    <ComboBox fx:id="cmbAvailability"
+                              promptText="Availability"
                               prefWidth="250"/>
 
                 </VBox>
@@ -60,36 +72,39 @@
             <HBox spacing="15">
 
                 <Button text="SAVE"
+                        onAction="#saveTherapist"
                         prefWidth="120"
                         styleClass="action-btn"/>
 
                 <Button text="UPDATE"
+                        onAction="#updateTherapist"
                         prefWidth="120"
                         styleClass="action-btn"/>
 
                 <Button text="DELETE"
+                        onAction="#deleteTherapist"
                         prefWidth="120"
                         styleClass="action-btn"/>
 
             </HBox>
 
-            <TableView prefHeight="500">
+            <TableView fx:id="tblTherapist" prefHeight="500">
 
                 <columns>
 
-                    <TableColumn text="ID"
+                    <TableColumn fx:id="colId" text="ID"
                                  prefWidth="120"/>
 
-                    <TableColumn text="Name"
+                    <TableColumn fx:id="colName" text="Name"
                                  prefWidth="220"/>
 
-                    <TableColumn text="Specialization"
+                    <TableColumn fx:id="colSpecialization" text="Specialization"
                                  prefWidth="250"/>
 
-                    <TableColumn text="Program"
+                    <TableColumn fx:id="colProgram" text="Program"
                                  prefWidth="220"/>
 
-                    <TableColumn text="Availability"
+                    <TableColumn fx:id="colAvailability" text="Availability"
                                  prefWidth="180"/>
 
                 </columns>

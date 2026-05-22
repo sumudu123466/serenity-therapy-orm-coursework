@@ -10,23 +10,28 @@ public class AppInitializer extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
+        var loginResource = getClass()
+                .getResource(
+                        "/view/login-form.fxml"
+                );
+
+        if(loginResource == null) {
+            throw new RuntimeException("login-form.fxml not found!");
+        }
+
         Scene scene = new Scene(
-
-                FXMLLoader.load(
-                        getClass()
-                                .getResource(
-                                        "/view/login-form.fxml"
-                                )
-                )
-
+                FXMLLoader.load(loginResource)
         );
 
+        var styleResource = getClass()
+                .getResource("/css/style.css");
+
+        if(styleResource == null) {
+            throw new RuntimeException("style.css not found!");
+        }
+
         scene.getStylesheets().add(
-
-                getClass()
-                        .getResource("/css/style.css")
-                        .toExternalForm()
-
+                styleResource.toExternalForm()
         );
 
         stage.setScene(scene);
@@ -38,7 +43,7 @@ public class AppInitializer extends Application {
         stage.show();
     }
 
-    public static void main(String[] args) {
+    public static void main(@SuppressWarnings("unused") String[] args) {
 
         launch();
 

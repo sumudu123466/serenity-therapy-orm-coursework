@@ -17,8 +17,10 @@ import java.util.List;
 public class TherapyProgram {
 
     @Id
+    @Column(name = "program_id")
     private String programId;
 
+    @Column(name = "program_name")
     private String programName;
 
     private String duration;
@@ -30,4 +32,7 @@ public class TherapyProgram {
     @ManyToMany(mappedBy = "programs")
 
     private List<Patient> patients;
+
+    @OneToMany(mappedBy = "therapyProgram")
+    private List<TherapySession> therapySessions;
 }
